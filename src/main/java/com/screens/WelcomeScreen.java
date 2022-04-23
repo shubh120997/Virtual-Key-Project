@@ -1,12 +1,13 @@
 package com.screens;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+
+import com.services.FileService;
 
 
 public class WelcomeScreen implements Screen {
 	
-	public static FileOperationScreen obj = new FileOperationScreen();
+	public static FileMenu file = new FileMenu();
 	
 	private String welcomeText = "Welcome to Virtual Key For Your Repositories!";
 	private String developerText = "Developer: Shubham Patel";
@@ -51,14 +52,15 @@ public class WelcomeScreen implements Screen {
 		// TODO Auto-generated method stub
 		switch(option) {
 	    	case 1: // Show Files in Directory
-	    		System.out.println("Into Show Files Option");
+	    		this.showFiles();
+	    		System.out.println();
 	    		this.show();            
 	    		break;
 	        
 	        case 2: // Show File Operation menu
 	        	System.out.println();
-	        	obj.show();
-	        	obj.getUserInput();
+	        	file.show();
+	        	file.getUserInput();
 	            break;
 	        
 	        case 3:
@@ -73,6 +75,12 @@ public class WelcomeScreen implements Screen {
 	}
 	}
 
-	
+	public void showFiles() {
+
+        //Get the files from the Directory
+        System.out.println("List of Files: ");
+    	FileService.printFiles();
+
+    }
 
 }
