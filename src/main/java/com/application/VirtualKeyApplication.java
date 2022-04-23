@@ -7,7 +7,7 @@ public class VirtualKeyApplication {
 			
 			WelcomeScreen welcome = new WelcomeScreen();
 	    	welcome.introWS();
-	    	welcome.GetUserInput();
+	    	welcome.getUserInput();
 	
 		}
 }

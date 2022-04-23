@@ -2,10 +2,10 @@ package com.screens;
 
 public interface Screen {
 
-    public void Show();
+    public void show();
     
-    public void GetUserInput();
+    public void getUserInput();
     
-    public void NavigateOption(int option);
+    public void navigateOption(int option);
 
 }

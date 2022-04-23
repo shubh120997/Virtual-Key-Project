@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class WelcomeScreen implements Screen {
 	
-	
+	public static FileOperationScreen obj = new FileOperationScreen();
 	
 	private String welcomeText = "Welcome to Virtual Key For Your Repositories!";
 	private String developerText = "Developer: Shubham Patel";
@@ -26,10 +26,10 @@ public class WelcomeScreen implements Screen {
 		System.out.println(welcomeText);
 		System.out.println(developerText);
 		System.out.println();
-		Show();
+		show();
 	}
 
-	public void Show() {
+	public void show() {
 		// TODO Auto-generated method stub
 		System.out.println("Main Menu");
         for (String s : options)  {
@@ -37,27 +37,28 @@ public class WelcomeScreen implements Screen {
         }
 	}
 	
-	public void GetUserInput() {
+	public void getUserInput() {
 		// TODO Auto-generated method stub
 		int selectedOption  = 0;
         in = new Scanner(System.in);
         do {
         	selectedOption = in.nextInt();
-            this.NavigateOption(selectedOption);
+            this.navigateOption(selectedOption);
         }while (selectedOption != 3);
 	}
 
-	public void NavigateOption(int option) {
+	public void navigateOption(int option) {
 		// TODO Auto-generated method stub
 		switch(option) {
 	    	case 1: // Show Files in Directory
 	    		System.out.println("Into Show Files Option");
-	    		this.Show();            
+	    		this.show();            
 	    		break;
 	        
-	        case 2: // Show File Options menu
-	        	System.out.println("Inside FileOperation Menu");
-	        	this.Show();
+	        case 2: // Show File Operation menu
+	        	System.out.println();
+	        	obj.show();
+	        	obj.getUserInput();
 	            break;
 	        
 	        case 3:
@@ -67,7 +68,7 @@ public class WelcomeScreen implements Screen {
 	        default:
 	            System.out.println("Invalid Option");
 	            System.out.println();
-	            this.Show();
+	            this.show();
 	            break;
 	}
 	}
